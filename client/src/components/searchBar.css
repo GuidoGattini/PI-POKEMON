@@ -1,0 +1,22 @@
+.search{
+    width: 150px;
+    height: 30px;
+    margin-right: 15px;
+    border: none;
+    border-bottom: 3px solid green;
+    background: white;
+    outline: 0px;
+    transform: translateX(600px)
+}
+
+.btn-search{
+    width: 120px;
+    height: 40px;
+    background: rgb(13, 148, 1);
+    align-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    transform: translateX(600px)
+}

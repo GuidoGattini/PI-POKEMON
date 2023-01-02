@@ -1,0 +1,45 @@
+.navbar {
+    position:static;
+    display: flex;
+    width: 100%;
+    height: 125px;
+    align-items: center;
+    justify-content: space-around;
+    object-fit: cover;
+    background-color: #f2cb07;
+    box-shadow: 0px 10px 10px 0px rgba(33, 33, 33, 0.35);
+  }
+  
+  .logotipo img {
+    position: relative;
+    width: 125px;
+    height: 100px;
+    margin-top: 50px;
+  }
+
+  .rutas li{
+    list-style: none;
+    padding: 10px;
+
+  }
+
+  .rutas li a{
+    text-decoration: none;
+    background-color: crimson;
+    color: white;
+    padding: 7px 10px 7px 10px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    cursor: pointer;
+  }
+
+  .rutas li a:hover{
+    transition: all 1s;
+    background-color: blue;
+  }
+
+  .rutas{
+    display: flex;
+    flex-direction: row;
+  }

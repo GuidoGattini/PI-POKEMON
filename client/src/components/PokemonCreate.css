@@ -1,0 +1,111 @@
+.container-created{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    background-image: url('../img/crearpokemon.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 937px;
+}
+
+.botones{
+    margin-bottom: 15px;
+}
+
+
+.formulario{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    background:white;
+    border-radius: 30px;
+    transform: translateX(-500px);
+}
+
+.botones a{
+    background-color: rgb(77, 9, 9);
+    color:white;
+    margin-top: 30px;
+    width: 170px;
+    height: 40px;
+    font-size: 20px;
+    font-family: 'Gill Sans';
+    border-radius: 10px;
+    border: none;
+}
+
+.datos_1 div{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    margin-top: 10px;
+
+}
+
+.datos_2 div{
+    display: flex;
+    align-items: center;
+    margin: auto;
+    justify-content: space-around;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.form #button-create{
+    background-color: rgb(77, 9, 9);
+    color:white;
+    margin-top: 30px;
+    width: 170px;
+    height: 40px;
+    font-size: 20px;
+    font-family: 'Gill Sans';
+    border-radius: 10px;
+    border: none;
+}
+
+
+.form a{
+    padding: 8px 40px;
+    margin-right: 50px;
+}
+
+.datos_2 select{
+    width: 200px;
+    height: 30px;
+    margin-right: 20px;
+    border: none;
+    text-transform: uppercase;
+    background: none;
+    border-bottom: 2px solid rgb(0,128,128);
+    outline: 0px;
+    text-align: center;
+}
+
+
+.selected-type span{
+    padding: 10px;
+    color:black;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+
+
+.datos_1 div input, .datos_2 div input{
+    width: 200px;
+    height: 30px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.form label{
+    padding: 5px 10px;
+    background-color: rgb(165, 122, 3);
+    width: 80px;
+    color: white;
+    font-size: 18px;
+}

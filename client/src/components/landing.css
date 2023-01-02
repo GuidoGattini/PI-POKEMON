@@ -1,0 +1,25 @@
+body{
+    background-image: url("../img/land.jpg");
+}
+
+h1{
+    font-size: 45px;
+    font-family: Roboto;
+    font-weight: bold;
+    font-style: italic;
+    text-transform: uppercase;
+    text-decoration: underline;
+    letter-spacing: 6px;
+    color: #b8b8b8;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 15px;
+    background-color: rgb(236, 28, 13);
+    color: #fff;
+    font-size: 20px;
+
+}

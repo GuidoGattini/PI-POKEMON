@@ -1,0 +1,49 @@
+.container-paginado{
+    display: flex;
+    width: 40%;
+    justify-content: center;
+    margin: auto;
+    padding-top: 20px;
+}
+
+.container-paginado button{
+    height: 40px;
+    width: 80px;
+    margin-top: 15px;
+    background-color: blueviolet;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.paginado{
+    display: flex;
+    flex-direction: row;
+}
+
+.page{
+    text-decoration: none;
+    list-style: none;
+    margin: 10px;
+}
+
+.page #segundo-paginado{
+    padding: 10px;
+    cursor: pointer;
+    background-color: rgb(41, 180, 6);
+    border-radius: 20%;
+    color:white;
+}
+
+.page #primer-paginado{
+    padding: 13px;
+    background-color: rgb(0, 119, 255);
+    border-radius: 20%;
+    cursor: pointer;
+    color: white;
+}
+
+.page:hover{
+    background-color: aqua;
+    transition: all 1s;
+}

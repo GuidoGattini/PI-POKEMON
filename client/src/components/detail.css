@@ -1,0 +1,19 @@
+.carta{
+    text-align: center;
+ display: inline-block;
+  height: px;
+  margin: 100px 100px 200px 100px;
+  width: 18%;
+  background-color: rgba(60, 62, 69, 0.479);
+  border-radius: 10px;
+  border: 2px ;
+  padding: 10px;
+}
+
+  .detalle h3, p{
+    display: inline-flex;
+    margin: 10px;
+  }
+.detalle img{
+    width: 150px;
+}
