@@ -1,17 +1,6 @@
 import axios from 'axios';
 
-//  export function getPokemons(){
-//      return async function(dispatch){
-//        axios.get("http://localhost:3001/pokemons")
-//        .then((res)=>{
-//          return dispatch({
-//            type: 'GET_POKEMONS',
-//            payload: res.data
-//          });
-//        })
-//        .catch((error)=> console.log(error));
-//      }
-//  }
+
 
  export function getPokemons() {   //conexión con el back
    return async function (dispatch) {

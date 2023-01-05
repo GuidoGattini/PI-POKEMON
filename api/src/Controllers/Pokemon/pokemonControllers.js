@@ -1,10 +1,11 @@
 const axios = require("axios");
 const { Pokemon, Tipo } = require('../../db')
 
+//('https://pokeapi.co/api/v2/pokemon?limit=151',  {'Accept-Encoding': 'gzip,deflate,compress'},)
 
 const getApiPokemon = async () => {
     try {
-        const respuesta01 = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=151')
+        const respuesta01 = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=151',  {'Accept-Encoding': 'gzip,deflate,compress'},)
         const respuesta02 = await axios.get(respuesta01.data.next)
         const data = respuesta01.data.results.concat(respuesta02.data.results)
         const pokemons = await Promise.all(data.map(async (obj) => {
@@ -22,7 +23,6 @@ const getApiPokemon = async () => {
                 types: poke.data.types.map((el) => el.type.name),
             }
         }))
-        console.log(pokemons)
         return pokemons;
     } catch (error) {
         console.log(error);

@@ -6,9 +6,9 @@ module.exports = (sequelize) => {
   sequelize.define('tipo', {
     id: {
       type: DataTypes.UUID,
-       allowNull: false,
+      defaultValue: DataTypes.UUIDV4,
       primaryKey: true,
-      defaultValue: DataTypes.UUIDV4
+      allowNull: false,
     },
     name: {
       type: DataTypes.STRING,
@@ -16,5 +16,5 @@ module.exports = (sequelize) => {
     },
 
   },
-  { timestamps: false });
+    { timestamps: false });
 };

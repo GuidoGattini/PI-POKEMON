@@ -18,7 +18,7 @@ export default function Home() {
     const allTypes = useSelector(state => state.allTypes);
     const dispatch = useDispatch()
     const [currentPage, setCurrentPage] = useState(1)
-    const [pokemonsXpage, setPokemonsXpage] = useState(12)
+    const [pokemonsXpage] = useState(12)
     const indexOfLastPokemon = currentPage * pokemonsXpage
     const indexOfFirstPokemon = indexOfLastPokemon - pokemonsXpage
     const currentPokes = allPokemons.slice(indexOfFirstPokemon, indexOfLastPokemon)
@@ -26,14 +26,13 @@ export default function Home() {
     const paginado = (pageNumber) => { setCurrentPage(pageNumber); };
     const [order, setOrder] = useState('')
     console.log(order)
-    // eslint-disable-next-line no-unused-vars
-
+    
 
     useEffect(() => {
         dispatch(getTypes());
         dispatch(getPokemons());
     }, [dispatch]);
-    // eslint-disable-next-line no-unused-vars
+    
 
     const handleFilterTypes = (e) => {
         dispatch(filterPokemonsByFilter(e.target.value))
@@ -51,10 +50,6 @@ export default function Home() {
         setCurrentPage(1);
     }
 
-    // function handleClick(e) {
-    //     e.preventDefault();
-    //     dispatch(getPokemons());
-    // }
 
     const handleReset = (e) => {
         e.preventDefault();
@@ -69,11 +64,11 @@ export default function Home() {
 
     return (
         <>
-        <NavBar />
+            <NavBar />
 
             <div className="filtros">
 
-                  <Link className="reset" to='/pokemon'>Create Pokemon</Link>  
+                <Link className="reset" to='/pokemon'>Create Pokemon</Link>
 
                 <button type="submit" className="reset" onClick={(e) => handleReset(e)}>Reset Page</button>
                 <select id="order" defaultValue="Select the order" onChange={(e) => handleFilterAsc(e)}>
@@ -81,13 +76,13 @@ export default function Home() {
                     <option value="asc">A - Z</option>
                     <option value="desc">Z - A</option>
                 </select>
-                
+
                 <select id="types" defaultValue="Select the type" onChange={e => handleFilterTypes(e)}>
-                <option value="type">Select the type</option>
-                        <option value="All">All</option>
-                        { allTypes?.map(types => (
-                            <option key={types.id} value={types.name}>{types.name}</option>
-                        ))}
+                    <option value="type">Select the type</option>
+                    <option value="All">All</option>
+                    {allTypes?.map(types => (
+                        <option key={types.id} value={types.name}>{types.name}</option>
+                    ))}
                     {/* <option value="All">Todos</option>
                     <option value="steel">Acero</option>
                     <option value="water">Agua</option>
@@ -127,19 +122,21 @@ export default function Home() {
                         </div> :
 
                         currentPokes.length ? currentPokes.map(poke => {
-                            return <Card
-                                id={poke.id}
-                                hp={poke.hp}
-                                name={poke.name}
-                                types={poke.types}
-                                img={poke.img}
-                                ataque={poke.ataque}
-                                peso={poke.peso}
-                                key={poke.id}
-                            />
+                            return (
+                                <Card
+                                    id={poke.id}
+                                    hp={poke.hp}
+                                    name={poke.name}
+                                    types={poke.types}
+                                    img={poke.img}
+                                    ataque={poke.ataque}
+                                    peso={poke.peso}
+                                    key={poke.id}
+                                />)
                         })
                             : null}
                 </div>
+
                 {currentPokes.length > 0 && allPokemons.length > 12 ?
                     <div className="pag">
                         <Paginado pokemonsXpage={pokemonsXpage} allPokes={allPokemons.length} paginado={paginado} currentPage={currentPage} />

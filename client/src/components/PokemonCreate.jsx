@@ -73,16 +73,6 @@ const Form = () => {
         e.target.value = "default"
         console.log("data de la img:", data)
 
-        // const typeSelect = e.target.value;
-        // if(data.types.length >= 2){
-        //     return alert('Máximo 2 tipos')
-        // };
-        // if(!data.types.includes(typeSelect)){
-        //     setData({
-        //         ...data,
-        //         types: [...data.types, typeSelect]
-        //     })
-        // }
     }
 
     const handleChangeData = (e) => {
@@ -156,7 +146,7 @@ const Form = () => {
                             <label htmlFor="type">Tipo/s: </label>
                             <select name="type" onChange={handleSelectType}>
                                 {types && types.map(t => {
-                                    return <option key={t} value={t.name}>{t.name}</option>
+                                    return <option key={t.id} value={t.name}>{t.name}</option>
                                 })}
                             </select>
                         </div>
@@ -165,6 +155,8 @@ const Form = () => {
                                 return <span key={type}>{type}  <button id="delete-type" onClick={() => handleDeleteType(type)}>x</button></span>
                             })}
                         </div>
+
+
                     </div>
                     <div className="botones">
                         <Link to="/home">CANCELAR</Link>
