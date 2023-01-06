@@ -30,9 +30,6 @@ module.exports = (sequelize) => {
     peso: {
       type: DataTypes.DECIMAL
     },
-    types: {
-      type: DataTypes.STRING
-    },
     createdInDb: {
       type: DataTypes.BOOLEAN,
       allowNull: false,

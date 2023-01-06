@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const { getAllPokemon } = require('../Controllers/Pokemon/pokemonControllers');
-const { Pokemon, Tipo } = require('../db')
+const { Pokemon, Type } = require('../db')
 const getApiType = require('../Controllers/Type/getApiType')
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');np
@@ -39,7 +39,7 @@ router.get('/pokemons/:id', async (req, res) => {
 
   if (validate) {
     try {
-      let dbId = await Pokemon.findByPk(id, { include: Tipo });  // entonce la busco directo de la base de datos
+      let dbId = await Pokemon.findByPk(id, { include: Type });  // entonce la busco directo de la base de datos
       res.status(200).json([dbId]);
     } catch (err) {
       console.log(err);
@@ -88,8 +88,8 @@ router.post('/pokemon', async (req, res) => {
 
     const newPokemon = { name, ataque, defensa, velocidad, hp, altura, peso, img }; // Sacar id: ++id
     const poke = await Pokemon.create(newPokemon);
-    let typess = await Tipo.findAll({ where: { name: types } })
-    await poke.addTipo(typess);
+    let typess = await Type.findAll({ where: { name: types } })
+    await poke.addType(typess);
     return res.status(200).send('Pokemon creado correctamente');
 
   } catch (error) {

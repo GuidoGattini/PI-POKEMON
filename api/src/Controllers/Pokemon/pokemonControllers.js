@@ -1,5 +1,5 @@
 const axios = require("axios");
-const { Pokemon, Tipo } = require('../../db')
+const { Pokemon, Type } = require('../../db')
 
 //('https://pokeapi.co/api/v2/pokemon?limit=151',  {'Accept-Encoding': 'gzip,deflate,compress'},)
 
@@ -35,7 +35,7 @@ const { Pokemon, Tipo } = require('../../db')
 const getDbInfo = async () => {
     return await Pokemon.findAll({ //Buscamos
         include: {
-            model: Tipo,
+            model: Type,
             attributes: ['name'],
             through: {
                 attributes: [], // Compruebo según los atributos
