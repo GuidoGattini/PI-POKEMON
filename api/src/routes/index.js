@@ -84,7 +84,7 @@ router.post('/pokemon', async (req, res) => {
     if (!name) return res.send({ info: "El nombre es obligatorio" });
     const existe = await Pokemon.findOne({ where: { name: name } });
     if (existe) throw Error("El pokemon ya existe");
-    if (!img) img = 'https://i0.wp.com/gamerfocus.co/wp-content/uploads/2015/02/Pokemon-1.png?ssl=1';
+    if (!img) img = 'https://e00-marca.uecdn.es/assets/multimedia/imagenes/2022/06/01/16540932703790.png';
 
     const newPokemon = { name, ataque, defensa, velocidad, hp, altura, peso, img }; // Sacar id: ++id
     const poke = await Pokemon.create(newPokemon);

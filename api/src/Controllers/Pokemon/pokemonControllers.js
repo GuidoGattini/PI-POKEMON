@@ -55,17 +55,7 @@ const getAllPokemon = async () => {
 }
 
 
-// const getAllPokemon = async () => {
-//     try {
-//         const pokesApi = await getApiPokemon();
-//         const pokesDb = await getDbInfo();
-//         const allPokemons = [...pokesApi, ...pokesDb]
 
-//         return allPokemons;
-//     } catch (error) {
-//         console.log(error);
-//     }
-// }
 
 
 
