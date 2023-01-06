@@ -22,11 +22,12 @@ export default function Card({ id, name, types, img, hp, ataque }) {
                 </div>
                 <div className="types">
                     <p>Tipo/s:</p>
-                    <h3>{types}</h3> 
-                     {/* <h3>{types.createdInDb = true ? types + " " : types.map(el =>el.name +(' ')) }</h3>   */}
+                     <h3>{types[0].name ? types[0].name + " " + types[1].name : types.map(el => el + (" "))}</h3>  
 
-                        {/* <h3>{types}</h3>  */}
-                    {/* {console.log(types)} */}
+                     {/* <h3>{types[0].name ? types[0].name + " " + types[1].name : types}</h3>   */}
+
+                     {/* <h3>{types.createdInDb = true ? types + " " : types.map(el =>el.name +(' '))  }</h3>  */}
+                     
                 </div>
 
 

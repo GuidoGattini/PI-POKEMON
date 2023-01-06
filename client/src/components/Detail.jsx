@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getDetail, clearDetail } from "../redux/actions/index";
 import { useEffect } from "react";
@@ -12,7 +12,6 @@ export default function Detail(props) {
 
     useEffect(() => {
         dispatch(getDetail(props.match.params.id))
-        // eslint-disable-next-line react-hooks/exhaustive-deps
         return () => {
             dispatch(clearDetail())
         }
@@ -31,11 +30,12 @@ export default function Detail(props) {
                         <h2>Peso:{myPokemons[0].peso}</h2>
                         <h2>Altura:{myPokemons[0].altura}</h2>
                         <h2>Velocidad: {myPokemons[0].velocidad}</h2>
-                        {/* <h2>Tipo: {!myPokemons[0].createdInDb ? myPokemons[0].types + " " : myPokemons[0].types.map(el => el.name + (' '))}</h2>  */}
+                        <h2>Tipo: {!myPokemons[0].createdInDb ? myPokemons[0].types + " " : myPokemons[0].types.map(el => el.name + (' '))}</h2> 
                         
+{/* {myPokemons.types[0].name ? myPokemons.types[0].name + " " + myPokemons.types[1].name : myPokemons.types.map(el => el + (" "))} */}
 
-
-                    </div> : <p>Loading...</p>
+                    </div> : <font color="white">Loading...</font> 
+                    // Para poder ponerle color en la etiqueta usé font
             }
             <Link to='/home'>
                 <button>Volver</button>
