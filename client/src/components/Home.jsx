@@ -18,7 +18,7 @@ export default function Home() {
     const allTypes = useSelector(state => state.allTypes);
     const dispatch = useDispatch()
     const [currentPage, setCurrentPage] = useState(1)
-    const [pokemonsXpage] = useState(12)
+    const [pokemonsXpage] = useState(8)
     const indexOfLastPokemon = currentPage * pokemonsXpage
     const indexOfFirstPokemon = indexOfLastPokemon - pokemonsXpage
     const currentPokes = allPokemons.slice(indexOfFirstPokemon, indexOfLastPokemon)
@@ -137,7 +137,7 @@ export default function Home() {
                             : null}
                 </div>
 
-                {currentPokes.length > 0 && allPokemons.length > 12 ?
+                {currentPokes.length > 0 && allPokemons.length > 8 ?
                     <div className="pag">
                         <Paginado pokemonsXpage={pokemonsXpage} allPokes={allPokemons.length} paginado={paginado} currentPage={currentPage} />
                     </div> : null}

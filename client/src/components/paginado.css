@@ -23,7 +23,7 @@
 
 .page{
     text-decoration: none;
-    list-style: none;
+    list-style:inside;
     margin: 10px;
 }
 
@@ -43,7 +43,4 @@
     color: white;
 }
 
-.page:hover{
-    background-color: aqua;
-    transition: all 1s;
-}
+

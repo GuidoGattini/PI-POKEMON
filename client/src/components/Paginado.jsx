@@ -1,24 +1,36 @@
 import React from "react";
 import './paginado.css'
 
-const Paginado = ({pokemonsXpage, allPokes, paginado, currentPage}) => {
-    const pagesNumber = [];
-    const maxPage = Math.ceil(allPokes/pokemonsXpage);
-    for(let i = 1; i <= Math.ceil(allPokes/pokemonsXpage);i++){
-        pagesNumber.push(i);
+
+export default function Paginado({pokemonsXpage, allPokes, paginado, currentPage}){
+    const numberOfPage=[];
+
+    const maxPage= Math.ceil(allPokes/pokemonsXpage);
+    for(let i=1; i<= maxPage; i++){
+        numberOfPage.push(i)
     }
-
-    return (
+    return(
         <div className="container-paginado">
-            <ul className="paginado">
-                { pagesNumber && pagesNumber.map(num => {
-                    return <li className="page" key={num}>
-                        {currentPage === num ? <a id="primer-paginado" onClick={() => paginado(num)}>{num}</a> : <a id="segundo-paginado" onClick={() => paginado(num)}>{num}</a>}
+            <nav>
+                <ul className="paginado">
+                    {currentPage >1 ?(
+                        <li className="page"  onClick={()=> paginado(currentPage - 1)}>
+                            <button>Atras</button>
+                        </li>
+                    ): null}
+                    <li className="page"  onClick={()=> paginado(currentPage)}>
+                        <button>{currentPage}</button>
                     </li>
-                })}
-            </ul>
+                    {currentPage < allPokes/pokemonsXpage ?(
+                        <li className="page"  onClick={()=> paginado(currentPage + 1)}>
+                            <button>Next</button>
+                        </li>
+                    ): null}
+                    
+                    
+                </ul>
+            </nav>
         </div>
-    )
-};
-
-export default Paginado;
+    );
+    
+}

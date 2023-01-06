@@ -13,16 +13,16 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
     hp: {
-      type: DataTypes.INTEGER
+      type: DataTypes.DECIMAL
     },
     ataque: {
-      type: DataTypes.INTEGER
+      type: DataTypes.DECIMAL
     },
     defensa: {
-      type: DataTypes.INTEGER
+      type: DataTypes.DECIMAL
     },
     velocidad: {
-      type: DataTypes.INTEGER
+      type: DataTypes.DECIMAL
     },
     altura: {
       type: DataTypes.DECIMAL
@@ -30,10 +30,13 @@ module.exports = (sequelize) => {
     peso: {
       type: DataTypes.DECIMAL
     },
+    types: {
+      type: DataTypes.STRING
+    },
     createdInDb: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
-      defaultValue: false,
+      defaultValue: true,
     },
     img: {
       type: DataTypes.STRING,

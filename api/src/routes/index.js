@@ -29,6 +29,9 @@ router.get('/pokemons', async (req, res) => {
 
 
 
+
+
+
 router.get('/pokemons/:id', async (req, res) => {
   const { id } = req.params
   const allPoke = await getAllPokemon()
@@ -42,7 +45,6 @@ router.get('/pokemons/:id', async (req, res) => {
       console.log(err);
     }
   }
-
   else {
     try {
       if (id) {
